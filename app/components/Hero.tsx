@@ -9,7 +9,9 @@ export function Hero() {
     <section className="hero">
       <h1>Open Source</h1>
       <p className="hero-subtitle">
-        Open source shaped our careers — from leading qooxdoo at 1&amp;1 over a
+        Open source shaped our careers — from leading{" "}
+        <a href="https://qooxdoo.org" target="_blank" rel="noopener noreferrer">qooxdoo</a>{" "}
+        at 1&amp;1 over a
         decade ago to the tools we rely on every day. We&apos;re grateful for
         that, and we give back. Today we maintain {projects.length}{" "}
         production-grade projects across four languages: TypeScript developer
