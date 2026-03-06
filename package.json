@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "react-router dev",
     "build": "react-router build",
-    "preview": "npx serve build/client"
+    "preview": "pnpx serve build/client",
+    "deploy:prod": "pnpx @sebastian-gmbh/hosting deploy opensource-sebastian-software ./build/client"
   },
   "dependencies": {
     "ardo": "^3.0.4",

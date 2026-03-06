@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to Bunny
 
 on:
   push:
@@ -24,22 +24,21 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm run build
+      - run: pnpm run deploy:prod
+        env:
+          NPM_CONFIG_//registry.npmjs.org/:_authToken: ${{ secrets.NPM_HOSTING_PACKAGE_TOKEN }}
 
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: build/client
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+  #deploy:
+  #  needs: build
+  #  runs-on: ubuntu-latest
+  #  environment:
+  #    name: github-pages
+  #    url: ${{ steps.deployment.outputs.page_url }}
+  #  steps:
+  #    - id: deployment
+  #      uses: actions/deploy-pages@v4
