@@ -33,6 +33,7 @@ jobs:
       - run: pnpm run deploy:prod
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_HOSTING_PACKAGE_TOKEN }}
+          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
 
   #deploy:
   #  needs: build
