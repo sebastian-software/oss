@@ -132,38 +132,6 @@ export function HostingTransferSection(): React.JSX.Element {
   );
 }
 
-export function TerminaroSection(): React.JSX.Element {
-  return (
-    <>
-      <h2>Appointment Booking via Terminaro</h2>
-      <p>
-        For online appointment booking, we use our own service Terminaro.
-        Terminaro is operated by the same controller (Sebastian Software
-        GmbH) – this therefore does not constitute a transfer of data to a
-        third party within the meaning of Art. 4(10) GDPR, but rather an
-        internal processing operation by the same controller.
-      </p>
-      <p>
-        When you schedule an appointment via the booking link, the data
-        you enter (name, email address, company if applicable, phone
-        number and booking reason) will be processed by Terminaro.
-      </p>
-
-      <h3>Legal Basis and Retention Period</h3>
-      <p>
-        Processing is based on Art. 6(1)(b) GDPR for the initiation of a
-        consulting engagement (pre-contractual measures). Booking data is
-        automatically deleted 90 days after the appointment date. If a
-        contractual relationship arises from the booking and tax or
-        commercial law retention obligations apply (§ 257 HGB, § 147 AO),
-        the relevant data will be retained for up to 10 years. Terminaro
-        does not set any cookies on the public website and does not use
-        tracking or web analytics.
-      </p>
-    </>
-  );
-}
-
 export function RightsSection(): React.JSX.Element {
   return (
     <>

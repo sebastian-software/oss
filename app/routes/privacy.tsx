@@ -8,7 +8,6 @@ import {
   HostingTransferSection,
   ObjectionSection,
   RightsSection,
-  TerminaroSection,
 } from "../components/PrivacySections";
 import "../components/LegalPage.css";
 
@@ -71,7 +70,6 @@ export default function Privacy(): React.JSX.Element {
 
             <ControllerSection />
             <DataProcessingSection />
-            <TerminaroSection />
 
             <h2>Processors</h2>
             <p>
