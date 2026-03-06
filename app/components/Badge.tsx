@@ -21,7 +21,7 @@ export function Badge({ repo, license, ecosystem }: BadgeProps) {
       </span>
       <span className="badge-pill badge-license">{license}</span>
       <img
-        src={`https://img.shields.io/github/stars/${repo}?style=flat-square&label=&color=888`}
+        src={`/ext/shields/github/stars/${repo}?style=flat-square&label=&color=888`}
         alt="GitHub stars"
         loading="lazy"
         height="18"

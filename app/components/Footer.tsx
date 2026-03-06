@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import "./Footer.css"
 
 export function Footer() {
@@ -5,7 +6,7 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <span>&copy; {new Date().getFullYear()} Sebastian Software GmbH</span>
-        <nav className="footer-links">
+        <nav className="footer-links" aria-label="Footer">
           <a
             href="https://github.com/sebastian-software"
             target="_blank"
@@ -20,6 +21,8 @@ export function Footer() {
           >
             Website
           </a>
+          <Link to="/imprint">Legal Notice</Link>
+          <Link to="/privacy">Privacy Policy</Link>
         </nav>
       </div>
     </footer>
