@@ -12,6 +12,16 @@
   color: var(--color-text-muted);
 }
 
+.footer-inner > span a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-inner > span a:hover {
+  color: var(--color-accent);
+}
+
 .footer-links {
   display: flex;
   gap: var(--space-lg);

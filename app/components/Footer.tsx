@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-inner">
-        <span>&copy; {new Date().getFullYear()} Sebastian Software GmbH</span>
+        <span>&copy; 2014&ndash;{new Date().getFullYear()} <a href="https://sebastian-software.com" target="_blank" rel="noopener noreferrer">Sebastian Software GmbH</a></span>
         <nav className="footer-links" aria-label="Footer">
           <a
             href="https://github.com/sebastian-software"
@@ -15,7 +15,7 @@ export function Footer() {
             GitHub
           </a>
           <a
-            href="https://www.sebastian-software.de"
+            href="https://sebastian-software.com"
             target="_blank"
             rel="noopener noreferrer"
           >

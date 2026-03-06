@@ -6,7 +6,7 @@ export function Header() {
   return (
     <header className="header">
       <div className="container header-inner">
-        <a href="https://sebastian-software.com" className="header-brand">
+        <a href="https://oss.sebastian-software.de" className="header-brand">
           <img
             src={logoSoftware}
             alt="Sebastian Software"
