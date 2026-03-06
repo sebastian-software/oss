@@ -1,7 +1,7 @@
 import { projects } from "../data/projects"
 import "./Hero.css"
 
-export function Hero() {
+export function Hero(): React.JSX.Element {
   const uniqueCategories = new Set(projects.map((p) => p.category)).size
   const languages = ["TypeScript", "Rust", "Python", "Swift"]
 
@@ -10,7 +10,7 @@ export function Hero() {
       <h1>Open Source</h1>
       <p className="hero-subtitle">
         Open source shaped our careers — from leading{" "}
-        <a href="https://qooxdoo.org" target="_blank" rel="noopener noreferrer">qooxdoo</a>{" "}
+        <a href="https://qooxdoo.org" rel="noopener noreferrer" target="_blank">qooxdoo</a>{" "}
         at 1&amp;1 over a
         decade ago to the tools we rely on every day. We&apos;re grateful for
         that, and we give back. Today we maintain {projects.length}{" "}

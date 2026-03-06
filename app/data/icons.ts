@@ -1,11 +1,10 @@
-import type { LucideIcon } from "lucide-react"
 import {
   ArrowRightLeft,
   AudioLines,
+  Blocks,
   BookOpen,
   Braces,
   BrainCircuit,
-  Blocks,
   Camera,
   Cpu,
   Database,
@@ -14,6 +13,7 @@ import {
   FileText,
   Globe,
   Languages,
+  type LucideIcon,
   Mic,
   Phone,
   Regex,
@@ -23,13 +23,13 @@ import {
   Wrench,
 } from "lucide-react"
 
-export const iconMap: Record<string, LucideIcon> = {
+export const iconMap: Partial<Record<string, LucideIcon>> = {
   ArrowRightLeft,
   AudioLines,
+  Blocks,
   BookOpen,
   Braces,
   BrainCircuit,
-  Blocks,
   Camera,
   Cpu,
   Database,

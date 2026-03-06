@@ -7,12 +7,19 @@ import * as BunnySdk from "@bunny.net/edgescript-sdk"
 
 // --- Helpers ---
 
+const HTTP_OK = 200
+const HTTP_MULTIPLE_CHOICES = 300
+const FETCH_TIMEOUT_MS = 5000
+
 /**
  * Reconstructs the public-facing URL from an incoming edge request.
  *
  * Bunny forwards requests with internal hostnames, so the actual CDN host and
  * protocol are read from the `cdn-host` and `x-forwarded-proto` headers when
  * present.
+ *
+ * @param request - The incoming edge request.
+ * @returns The reconstructed public-facing URL.
  */
 function buildClientUrl(request: Request): URL {
   const internalUrl = new URL(request.url)
@@ -46,10 +53,10 @@ async function handleShieldsProxy(url: URL): Promise<Response | undefined> {
 
   try {
     const upstream = await fetch(upstreamUrl.toString(), {
-      signal: AbortSignal.timeout(5000),
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     })
     const contentType = upstream.headers.get("Content-Type") ?? "image/svg+xml"
-    const isOk = upstream.status >= 200 && upstream.status < 300
+    const isOk = upstream.status >= HTTP_OK && upstream.status < HTTP_MULTIPLE_CHOICES
     const cacheControl = isOk ? "public, max-age=3600" : "no-cache, max-age=60"
 
     return new Response(upstream.body, {

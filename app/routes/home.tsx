@@ -1,24 +1,26 @@
 import { useState } from "react"
+
 import type { Category } from "../types/project"
 import type { Route } from "./+types/home"
+
+import { CategoryFilter } from "../components/CategoryFilter"
+import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
 import { Hero } from "../components/Hero"
-import { CategoryFilter } from "../components/CategoryFilter"
 import { ProjectGrid } from "../components/ProjectGrid"
-import { Footer } from "../components/Footer"
 
-export function meta(_args: Route.MetaArgs) {
+export function meta(_arguments: Route.MetaArgs): Route.MetaDescriptors {
   return [
     { title: "Open Source — Sebastian Software" },
     {
-      name: "description",
       content:
         "Open-source projects by Sebastian Software GmbH — developer tooling, Rust-powered performance, AI & speech, and more.",
+      name: "description",
     },
   ]
 }
 
-export default function Home() {
+export default function Home(): React.JSX.Element {
   const [filter, setFilter] = useState<Category | null>(null)
 
   return (

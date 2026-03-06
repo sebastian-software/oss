@@ -1,28 +1,28 @@
 export type Category =
+  | "AI & Speech"
+  | "Data & Encoding"
   | "Developer Tooling"
   | "Libraries & Frameworks"
   | "Native Node.js Bindings"
-  | "AI & Speech"
-  | "Data & Encoding"
 
 export type CategoryIcon =
-  | "Wrench"
   | "Blocks"
-  | "Cpu"
   | "BrainCircuit"
+  | "Cpu"
   | "Database"
+  | "Wrench"
 
-export type Ecosystem = "npm" | "crate" | "app"
+export type Ecosystem = "app" | "crate" | "npm"
 
-export interface Project {
-  name: string
-  repo: string
-  icon: string
+export type Project = {
   category: Category
   description: string
   detail: string
-  license: string
   ecosystem: Ecosystem
   highlight?: string
+  icon: string
+  license: string
+  name: string
   npm?: string
+  repo: string
 }

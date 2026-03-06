@@ -1,20 +1,22 @@
-import type { EntryContext } from "react-router"
-import { ServerRouter } from "react-router"
-import { renderToReadableStream } from "react-dom/server"
 import { isbot } from "isbot"
+import { renderToReadableStream } from "react-dom/server"
+import { type EntryContext, ServerRouter } from "react-router"
+
+const HTTP_INTERNAL_SERVER_ERROR = 500
 
 export default async function handleRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
   routerContext: EntryContext
-) {
+): Promise<Response> {
+  let statusCode = responseStatusCode
   const body = await renderToReadableStream(
     <ServerRouter context={routerContext} url={request.url} />,
     {
       onError(error: unknown) {
         console.error(error)
-        responseStatusCode = 500
+        statusCode = HTTP_INTERNAL_SERVER_ERROR
       },
     }
   )
@@ -27,6 +29,6 @@ export default async function handleRequest(
 
   return new Response(body, {
     headers: responseHeaders,
-    status: responseStatusCode,
+    status: statusCode,
   })
 }

@@ -1,19 +1,20 @@
 import type { Ecosystem } from "../types/project"
+
 import "./Badge.css"
 
-interface BadgeProps {
-  repo: string
-  license: string
+type BadgeProperties = {
   ecosystem: Ecosystem
+  license: string
+  repo: string
 }
 
 const ecosystemLabels: Record<Ecosystem, string> = {
-  npm: "npm",
-  crate: "Rust crate",
   app: "App",
+  crate: "Rust crate",
+  npm: "npm",
 }
 
-export function Badge({ repo, license, ecosystem }: BadgeProps) {
+export function Badge({ ecosystem, license, repo }: BadgeProperties): React.JSX.Element {
   return (
     <div className="badge-row">
       <span className={`badge-pill badge-ecosystem badge-ecosystem-${ecosystem}`}>
@@ -21,10 +22,10 @@ export function Badge({ repo, license, ecosystem }: BadgeProps) {
       </span>
       <span className="badge-pill badge-license">{license}</span>
       <img
-        src={`/ext/shields/github/stars/${repo}?style=flat-square&label=&color=888`}
         alt="GitHub stars"
-        loading="lazy"
         height="18"
+        loading="lazy"
+        src={`/ext/shields/github/stars/${repo}?style=flat-square&label=&color=888`}
       />
     </div>
   )
