@@ -7,6 +7,7 @@ export default defineConfig({
       title: "Open Source — Sebastian Software",
       description:
         "Open-source projects by Sebastian Software GmbH — developer tooling, Rust-powered performance, AI & speech, and more.",
+      githubPages: false,
     }),
   ],
 })
